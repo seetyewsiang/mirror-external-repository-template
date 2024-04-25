@@ -23,6 +23,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: disable workflow
-        run: |
-          gh workflow disable ${{ inputs.workflow }}"
+        run: gh workflow disable ${{ inputs.workflow }}
         shell: bash
