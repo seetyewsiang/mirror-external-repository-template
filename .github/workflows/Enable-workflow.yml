@@ -22,7 +22,13 @@ jobs:
     name: enable workflow
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.4
+        with:
+          fetch-depth: 0
+          sparse-checkout: .github          
       - name: enable workflow
+        #run: gh workflow enable ${{ inputs.workflow }}
         run: gh workflow enable ${{ inputs.workflow }}
         env:
           GH_TOKEN: ${{ github.token }}
