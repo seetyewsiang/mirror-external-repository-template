@@ -24,4 +24,6 @@ jobs:
     steps:
       - name: disable workflow
         run: gh workflow disable ${{ inputs.workflow }}
+        env:
+          GH_TOKEN: ${{ github.token }}
         shell: bash
