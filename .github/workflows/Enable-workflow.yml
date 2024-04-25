@@ -23,6 +23,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: enable workflow
-        run: |
-          gh workflow enable ${{ inputs.workflow }}"
+        run: gh workflow enable ${{ inputs.workflow }}
         shell: bash
