@@ -1,0 +1,28 @@
+name: Enable workflow
+on:
+  workflow_call:
+    inputs:
+      workflow:
+        description: 'The name, ID, or file name of the workflow you want to enable'
+        # default: 'default-value'
+        required: true
+        type: string
+  workflow_dispatch:
+    inputs:
+      workflow:
+        description: 'The name, ID, or file name of the workflow you want to enable'
+        # default: 'default-value'
+        required: true
+        type: string
+permissions:
+  actions: write
+
+jobs:
+  enable-workflow:
+    name: enable workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: enable workflow
+        run: |
+          gh workflow enable ${{ inputs.workflow }}"
+        shell: bash
