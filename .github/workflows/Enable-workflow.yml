@@ -24,4 +24,6 @@ jobs:
     steps:
       - name: enable workflow
         run: gh workflow enable ${{ inputs.workflow }}
+        env:
+          GH_TOKEN: ${{ github.token }}
         shell: bash
